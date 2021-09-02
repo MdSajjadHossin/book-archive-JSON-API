@@ -12,34 +12,27 @@ const searchBook = () =>{
     fetch(url)
     .then(res => res.json())
     .then(data => displaySearchResult(data))
-
 }
-// searchBtn.addEventListener("click", function () {
-//     console.log(spinner);
-//     const searchText = searchInput.value;
-//     if (searchText === "") {
-//       errorDiv.innerText = "Search field cannot be empty.";
-//       return;
-//     }
-// })
 
 // Displaying Result
 const displaySearchResult = books => {
     const searchResult = document.getElementById('search-result');
     searchResult.textContent = '';
     const totalResultFound =  document.getElementById('result-found');
-    totalResultFound.innerHTML = `
-    <p class= "fs-4 mx-auto">Total Result found: ${books.numFound}</p>
-     `
+    if(books.numFound === 0){
+        totalResultFound.innerHTML = `
+        <p class= "fs-5 fw-bold text-center">No Result Found <br> Please Enter a Valid Book Name</p>
+        `
+    }
+    else{
+        totalResultFound.innerHTML = `
+        <p class= "fs-5 mx-3 fw-bold">${books.numFound} - Result Found</p>
+        `
+    }
         for (const book in books.docs)
         { 
             books.docs.forEach(eachBook =>{
-                // const totalResultFound =  document.getElementById('result-found');
-                // totalResultFound.innerHTML = `
-                // <p class= "fs-4 mx-auto">Total Result found: ${book.numFound}</p>
-                // `
                 imgUrl = `https://covers.openlibrary.org/b/id/${eachBook.cover_i}-M.jpg`;
-                // console.log(eachBook);
                 const div = document.createElement('div');
                 div.classList.add('col');
                 div.innerHTML = `
