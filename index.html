@@ -5,35 +5,41 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Book Archive</title>
+    <!-- css stylesheet -->
+    <style>
+      .card-class{
+        padding-bottom: 3px;
+      }
+      .card-img{
+        width: auto;
+        height: 50%;
+      }
+    </style>
     <!-- bootstrap stylesheet -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
 
 </head>
 <body>
+  <section>
     <h1 class="text-center">Book Archive</h1>
     <!-- search box -->
     <div class="input-group mb-3 w-50 mx-auto">
         <input id="search-book" type="text" class="form-control" placeholder="Search Your Desire Book" aria-label="Recipient's username" aria-describedby="button-addon2">
-        <button onclick="searchBook()" class="btn text-white bg-primary btn-outline-secondary" type="button" id="button-addon2">Search</button>
+        <button  onclick="searchBook()" class="btn text-white bg-primary btn-outline-secondary" type="button" id="button-addon2">Search</button>
     </div>
+    <!-- error div -->
+    <div id="error-div">
+    </div>
+    <!-- total result found -->
+    <div id="result-found">
+    </div>
+  </section>
     <!-- book card -->
-    <div id="search-result" class="row row-cols-1 row-cols-md-4 g-4 mx-auto">
-        <!-- <div class="col"> -->
-          <!-- <div class="card h-100">
-            <img src="..." class="card-img-top" alt="...">
-            <div class="card-body">
-              <h5 class="card-title">Book Title</h5>
-              <h5 class="card-title">Auther Name</h5>
-              <h5 class="card-title">Punlisher Name</h5>
-              <h5 class="card-title">Punlis Date</h5>
-            </div>
-          </div>
-        </div> -->
+    <section>
+      <div id="search-result" class="row row-cols-1 row-cols-md-4 g-4 mx-auto card-class">
       </div>
+    </section>
     <!-- inernal script -->
     <script src="./app.js"></script>
-    <!-- bootstrap script -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
-
 </body>
 </html>
